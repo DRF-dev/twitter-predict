@@ -1,16 +1,25 @@
-from sys import argv
+from typing import List
 
-from functions.fit import fit
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+from functions.predict import predict
 from functions.train import train
 
+app = FastAPI()
 
-if __name__ == '__main__':
-    action = argv[1]
+class Body(BaseModel):
+    texts: List[str]
 
-    if action == 'train':
-        dataset = argv[2]
-        train(dataset)
-    elif action == 'fit':
-        fit()
-    else:
-        raise Exception('Specify an action and a dataset or file with tweets in function of the action')
+@app.post("/train")
+def update_neural_network():
+    dataset = "helpers/dataset.csv"
+    train(dataset)
+    return {"message": "dataset is trained"}
+
+@app.post("/predict")
+def read_item(body: Body):
+    predictions = predict(body.texts)
+    return {"predictions": predictions}
+
+# Pour exécuter: uvicorn main:app --reload
