@@ -8,11 +8,21 @@ class Tweet:
         self.positif = positif
         self.negative = negative
 
+    def get_emotion(self):
+        if 0.66 < self.positif:
+            return "positif"
+        if 0.33 < self.positif < 0.66:
+            return "neutral"
+        if self.positif < 0.33:
+            return "negative"
+        return "Error: cannot get emotion"
+
     def to_json(self):
         return {
             "text": self.text,
             "positif": str('%.2f' % (self.positif * 100)) + "%",
-            "negative": str('%.2f' % (self.negative * 100)) + "%"
+            "negative": str('%.2f' % (self.negative * 100)) + "%",
+            "emotion": self.get_emotion()
         }
 
 def predict(texts: List[str]):

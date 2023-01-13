@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  twitter-prediction:
+    build:
+      context: .
+    container_name: twitter-prediction
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./helpers:/app/helpers
