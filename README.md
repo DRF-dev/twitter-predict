@@ -17,11 +17,18 @@ cd twitter-predict
 ```
 
 ## Utilisation
-1. Démarrez le serveur de développement
+1. Créer un fichier `helpers` avec dedans un fichier `dataset.csv` ayant le format suivant:
+```csv
+text;user;emotion
+You are a bad boy;user_one;0
+You are a good boy;user_two;1
+```
+avec `1` une émotion positive et `0` une émotion négative
+2. Démarrez le serveur de développement
 ```bash
 uvicorn main:app --reload
 ```
-2. Faites des requêtes sur l'API en utilisant un outil tel que Postman ou Insomnia
+3Faites des requêtes sur l'API en utilisant un outil tel que Postman ou Insomnia
 
 ## Routes
 Les routes disponibles sur l'API sont les suivantes :
