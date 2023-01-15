@@ -20,8 +20,8 @@ class Tweet:
     def to_json(self):
         return {
             "text": self.text,
-            "positif": str('%.2f' % (self.positif * 100)) + "%",
-            "negative": str('%.2f' % (self.negative * 100)) + "%",
+            "positif": '%.2f' % (self.positif * 100),
+            "negative": '%.2f' % (self.negative * 100),
             "emotion": self.get_emotion()
         }
 
