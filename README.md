@@ -28,7 +28,9 @@ avec `1` une émotion positive et `0` une émotion négative
 ```bash
 uvicorn main:app --reload
 ```
-3Faites des requêtes sur l'API en utilisant un outil tel que Postman ou Insomnia
+3. Faites des requêtes sur l'API en utilisant un outil tel que Postman ou Insomnia
+
+> Pour lancer plus facilement, installer docker et lancer la commande `docker-compose up --build`
 
 ## Routes
 Les routes disponibles sur l'API sont les suivantes :
