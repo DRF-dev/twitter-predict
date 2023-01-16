@@ -17,7 +17,7 @@ cd twitter-predict
 ```
 
 ## Utilisation
-1. Créer un fichier `helpers` avec dedans un fichier `dataset.csv` ayant le format suivant:
+1. Créer un dossier `helpers` avec dedans un fichier `dataset.csv` ayant le format suivant:
 ```csv
 text;user;emotion
 You are a bad boy;user_one;0
