@@ -30,7 +30,7 @@ uvicorn main:app --reload
 ```
 3. Faites des requêtes sur l'API en utilisant un outil tel que Postman ou Insomnia
 
-> Pour lancer plus facilement, installer docker et lancer la commande `docker-compose up --build`
+> Pour démarrez le serveur de développement plus facilement, installer docker et lancer la commande `docker-compose up --build`
 
 ## Routes
 Les routes disponibles sur l'API sont les suivantes :
